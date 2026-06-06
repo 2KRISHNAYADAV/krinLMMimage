@@ -1,0 +1,57 @@
+[project]
+name = "smalldiffusion"
+version = "0.5.0"
+description = "A minimal but functional implementation of diffusion model training and sampling"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [
+  {name = "Chenyang Yuan", email = "yuanchenyang@gmail.com" }
+]
+maintainers = [
+  {name = "Chenyang Yuan", email = "yuanchenyang@gmail.com" }
+]
+
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+]
+
+dependencies = [
+  "accelerate",
+  "numpy",
+  "torchvision",
+  "torch",
+  "tqdm",
+  "einops",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/yuanchenyang/smalldiffusion"
+"Bug Tracker" = "https://github.com/yuanchenyang/smalldiffusion/issues"
+"Documentation" = "https://github.com/yuanchenyang/smalldiffusion"
+"Source" = "https://github.com/yuanchenyang/smalldiffusion"
+
+[project.optional-dependencies]
+dev = ["twine"]
+test = ["pytest", "diffusers==0.32.1"]
+examples = [
+  "diffusers",
+  "transformers",
+  "datasets",
+  "jupyter",
+  "matplotlib",
+  "torch_ema",
+]
+
+[build-system]
+requires = ["uv_build>=0.10.9,<0.11.0"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+markers = [
+    "run_slow: mark tests as slow, skip unless --run_slow flag is passed",
+    "serial",
+]
